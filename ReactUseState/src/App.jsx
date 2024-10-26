@@ -1,16 +1,19 @@
 import "./App.css"
+import { useState } from "react";
 function App() {
-  
-  let count = 0;
+  const[count, setCount] = useState(0);
+
+  const increment = ()=> /*count += 1;*/{setCount(count + 1) };
+  const decrement = ()=> /*count -= 1;*/ {setCount(count - 1)};
 
   return (
     <>
       <span className="title">my counter</span>
       <p className="subtitle">the count is {count}</p>
-      <button className="button">-</button>
-      <button className="button">+</button>
+      <button onClick={decrement} className="button">-</button>
+      <button onClick={increment} className="button">+</button>
     </>
   )
 }
 
-export default App
+export default App;
